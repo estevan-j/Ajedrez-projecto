@@ -1,0 +1,81 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class PartidoDeAjedrez{
+-tiempo
+-Jugadores: Jugador
++ iniciarPartida()
++ finalizarPartida()
+}
+class Jugador{
++realizarJugada(Tablero) //da orden de un movimiento
+}
+class Tablero{
+-casillas:Casilla
++moverPieza()
+-capturarPieza()
+}
+class Posición{
+
+}
+class Casilla{
+-pieza:Pieza
+-estado:Estado
+}
+enum Color{
+BLANCO, NEGRO
+}
+abstract class Pieza{
+-posición
++{abstract}verificarMovimiento():boolean
+
+}
+enum Estado{
+LIBRE
+OCUPADA
+}
+interface Vertical{
+}
+interface Horizontal{
+}
+interface Diagonal{
+}
+class Alfil {
+
+}
+class Rey {
+
+}
+class Reina {
+
+}
+class Torre {
+
+}
+class Rey {
+}
+
+class Caballo{}
+class Peón {}
+
+class Movimiento {}
+
+
+Pieza <|--- Rey
+Pieza <|--- Reina
+Pieza <|--- Torre
+Pieza <|--- Alfil
+Pieza <|--- Peón
+Pieza <|--- Caballo
+
+PartidoDeAjedrez -> "2"Jugador
+PartidoDeAjedrez -> Tablero
+Casilla --> Pieza
+Tablero --> Casilla
+
+Pieza --> Color
+
+Casilla --> Estado
+
+
+@enduml
