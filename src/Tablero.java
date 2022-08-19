@@ -84,17 +84,7 @@ public class Tablero {
         }
     }
 
-    private void validarCaptura(int posiciónInicialX, int posiciónInicialY, int posiciónFinalX, int posiciónFinalY) throws CasillaException {
-        if (casillaEstaVacia(posiciónInicialX, posiciónFinalY)) {
-            throw new CasillaException("esta vaciá");
-        }
-        if (casillaEstaVacia(posiciónFinalX, posiciónFinalY)) {
-            throw new CasillaException("la casilla2 esta vacia");
-        }
-        if (!verificarSiEsDeDiferenteColor(posiciónInicialX, posiciónInicialY, posiciónFinalX, posiciónFinalY)) {
-            throw new CasillaException("color diferente");
-        }
-    }
+
 
     private boolean verificarSiEsDeDiferenteColor(int posiciónInicialX, int posiciónIniciaY, int posiciónFinalX, int posiciónFinalY) {
         return casilla[posiciónFinalX][posiciónFinalY].getPieza().getColor() != casilla[posiciónInicialX][posiciónIniciaY].getPieza().getColor();

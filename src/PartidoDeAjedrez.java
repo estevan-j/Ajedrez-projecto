@@ -1,3 +1,4 @@
+import pieza.Color;
 public class PartidoDeAjedrez {
 
 
@@ -5,4 +6,6 @@ public class PartidoDeAjedrez {
 
 
     }
+
+
 }

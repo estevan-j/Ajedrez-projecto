@@ -8,7 +8,7 @@ public class Caballo extends Pieza{
     @Override
     public boolean verificarMovimiento(int posiciónFinalX, int posiciónFinalY) {
         if (moverEnL(posiciónFinalX, posiciónFinalY)) {
-            System.out.println("pieza.Caballo valido");
+            System.out.println("Caballo valido");
             return true;
         }
 

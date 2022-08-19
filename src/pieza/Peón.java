@@ -9,8 +9,17 @@ public class Peón extends Pieza implements Vertical, Diagonal {
 
     @Override
     public boolean verificarMovimiento(int posiciónFinalX, int posiciónFinalY) {
-        return moverEnFormaDiagonal(posiciónFinalX, posiciónFinalY) || moverDeFormaVertical(posiciónFinalX);
+        if ( moverDeFormaVertical(posiciónFinalX) && super.yPosición == posiciónFinalY){
+            System.out.println("Peón valido");
+            return true;
+        }
+        if (moverEnFormaDiagonal(posiciónFinalX,posiciónFinalY)){
+            System.out.println("captura posible");
+            return true;
+        }
+        return  false;
     }
+
 
     @Override
     public boolean moverEnFormaDiagonal(int xPosicionFinal, int yPosicionFinal) {
